@@ -1,14 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Deno Minimal App</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gateway Corporate Solutions - Premiere technology services for the St. Louis area. Web development, AI integration, custom software solutions and more.">
+    <meta name="author" content="Gateway Corporate Solutions">
+    <meta name="keywords" content="Web Development, Software Development, AI Integration, Content Distribution, System Maintenance, St. Louis Technology Services">
+    <title>Gateway Corporate Solutions | Technology Services St. Louis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="content">
-    <h1>This is a simple demo<br>of a minimal webserver<br>in Deno.</h1>
-  </div>
+    <header>
+        <div class="hero">
+            <h1>Gateway Corporate Solutions</h1>
+            <p>Premiere technology services for the St. Louis area</p>
+            <p class="hero-subtitle">Guiding You Towards Unprecedented Success</p>
+            <button id="demo-btn" aria-label="Get Started">Get Started</button>
+            <button id="products-btn" aria-label="Learn More">Learn More</button>
+        </div>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="nav-left">
+                <h2>Gateway Corp</h2>
+            </div>
+        </nav>
+        <button id="menu-btn" class="menu-icon" aria-label="Open Menu">☰</button>
+    </header>
+    <div id="dropdown-menu" class="dropdown-menu" aria-hidden="true">
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p class="lead-text main-paragraph">Gateway Corporate Solutions is a team of passionate developers and designers dedicated to building high-quality software for businesses of all sizes. We are committed to providing cutting-edge technical solutions to our clients in the St. Louis area and beyond.</p>
+                <div class="about-columns">
+                    <div class="about-column">
+                        <p>Our team has extensive experience in web development, software engineering, and AI integration, ensuring that we can meet the diverse needs of our clients. Whether you need a new website, a custom software solution, or AI-powered tools, we have the expertise to help you succeed.</p>
+                    </div>
+                    <div class="about-column">
+                        <p>We understand the importance of technology in today's business, and we are committed to bringing you the best solutions to help you thrive in a competitive market. Our goal is to be your trusted partner in technology, providing you with the tools and support you need to achieve your business objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Some of Our Projects</h2>
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <h3 class="card-title">Open-Source Fingerprinting</h3>
+                    <p class="card-text card-text-large">Explore our open-source project for digital fingerprinting, designed to enhance security and user experience with FP-Devicer and FP-Snatch.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View FP-Devicer on GitHub</a>
+                        <a href="#" class="project-link">View FP-Snatch on GitHub</a>
+                        <a href="#" class="project-link">View Your Digital Fingerprint</a>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <h3 class="card-title">AI Service Representatives</h3>
+                    <p class="card-text card-text-large">Discover our innovative AI service representatives project with VOIP-TBS, integrating advanced AI with VOIP and SMS technology.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Read the VOIP-TBS Whitepaper</a>
+                        <a href="#" class="project-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="team">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <!-- Founders -->
+                <div class="card card-centered team-card founder-card">
+                    <div class="icon-circle icon-primary team-avatar founder-avatar">👨‍💻</div>
+                    <h3 class="card-title">Apollyon</h3>
+                    <p class="role-text role-primary team-role founder-role">Co-Founder | CTO</p>
+                    <p class="card-text team-bio">Technical visionary leading our development initiatives and driving innovation in emerging technologies.</p>
+                </div>
+                <div class="card card-centered team-card founder-card">
+                    <div class="icon-circle icon-primary team-avatar founder-avatar">🎨</div>
+                    <h3 class="card-title">Steven</h3>
+                    <p class="role-text role-primary team-role founder-role">Co-Founder | Lead Design</p>
+                    <p class="card-text team-bio">Creative director responsible for our visual identity and user experience design excellence.</p>
+                </div>
+                
+                <!-- Contributors -->
+                <div class="card card-centered team-card contributor-card">
+                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">🌟</div>
+                    <h3 class="card-title">Slip</h3>
+                    <p class="role-text role-secondary team-role contributor-role">Mentor | Angel Contributor</p>
+                    <p class="card-text team-bio">Strategic advisor providing guidance and investment support for our growth initiatives.</p>
+                </div>
+                <div class="card card-centered team-card contributor-card">
+                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">💼</div>
+                    <h3 class="card-title">Doug</h3>
+                    <p class="role-text role-secondary team-role contributor-role">Mentor | Business Expert</p>
+                    <p class="card-text team-bio">Business strategy consultant with extensive experience in scaling technology companies.</p>
+                </div>
+                <div class="card card-centered team-card contributor-card">
+                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">⚡</div>
+                    <h3 class="card-title">Jackson Alvarez</h3>
+                    <p class="role-text role-secondary team-role contributor-role">Angel Contributor</p>
+                    <p class="card-text team-bio">Investment partner focused on supporting innovative technology solutions and startups.</p>
+                </div>
+                <div class="card card-centered team-card contributor-card">
+                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">🚀</div>
+                    <h3 class="card-title">Tyler</h3>
+                    <p class="role-text role-secondary team-role contributor-role">Intern | Developer</p>
+                    <p class="card-text team-bio">Enthusiastic intern contributing to development projects and learning cutting-edge technologies.</p>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="card card-centered service-card">
+                    <div class="icon-circle icon-primary service-icon">🌐</div>
+                    <h3 class="card-title">Web Development & Design</h3>
+                    <p class="card-text">Creating stunning, responsive websites that drive results. From concept to launch, we build web solutions that engage your audience and grow your business.</p>
+                </div>
+                <div class="card card-centered service-card">
+                    <div class="icon-circle icon-primary service-icon">⚙️</div>
+                    <h3 class="card-title">Software & Custom Tools</h3>
+                    <p class="card-text">Tailored software solutions designed specifically for your business needs. We develop custom applications that streamline operations and boost productivity.</p>
+                </div>
+                <div class="card card-centered service-card">
+                    <div class="icon-circle icon-primary service-icon">🤖</div>
+                    <h3 class="card-title">AI Integration</h3>
+                    <p class="card-text">Harness the power of artificial intelligence to transform your business processes. From chatbots to predictive analytics, we integrate AI seamlessly into your workflow.</p>
+                </div>
+                <div class="card card-centered service-card">
+                    <div class="icon-circle icon-primary service-icon">📡</div>
+                    <h3 class="card-title">Content Distribution</h3>
+                    <p class="card-text">Maximize your reach with strategic content distribution across multiple platforms. We help you deliver the right message to the right audience at the right time.</p>
+                </div>
+                <div class="card card-centered service-card">
+                    <div class="icon-circle icon-primary service-icon">🔧</div>
+                    <h3 class="card-title">Maintenance & System Upgrades</h3>
+                    <p class="card-text">Keep your systems running smoothly with our comprehensive maintenance and upgrade services. We ensure your technology stays current and secure.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p class="lead-text">Ready to transform your business with cutting-edge technology? We'd love to hear from you.</p>
+            <p>If you would like to contact us, please fill out the form below or send us an email</p>
+            <form id="contact-form" aria-label="Contact Form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true" placeholder="Enter your full name">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com">
+                <label for="referral">How did you hear about us? (optional):</label>
+                <input type="text" id="referral" name="referral" placeholder="Search engine, referral, social media, etc.">
+                <label for="message">How can we help you?:</label>
+                <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about your project or how we can assist you..."></textarea>
+                <button type="submit" aria-label="Send Message">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Gateway Corporate Solutions. All rights reserved.</p>
+    </footer>
+    <script src="app.js" defer></script>
 </body>
+</html>
