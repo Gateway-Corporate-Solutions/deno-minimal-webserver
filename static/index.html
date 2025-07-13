@@ -26,10 +26,43 @@
         }
         .about-column.card {
             flex: 1 1 350px;
-            background-color: #f8f9fa;
+            background-color: rgb(26, 31, 31);
             padding: 1.5rem;
             border-radius: 0.75rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        #menu-btn {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .dropdown-toggle {
+            position: fixed;
+            top: 3.5rem;
+            right: 1rem;
+            z-index: 1000;
+            display: none;
+            background-color: rgb(26, 31, 31);;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-toggle ul {
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        .dropdown-toggle ul li {
+            padding: 0.5rem 1rem;
+        }
+        .dropdown-toggle ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            display: block;
+        }
+        .dropdown-toggle ul li:hover {
+            background-color: rgb(26, 31, 31);;
         }
     </style>
 </head>
@@ -47,17 +80,17 @@
                 <h2>Gateway Corp</h2>
             </div>
         </nav>
-        <button id="menu-btn" class="menu-icon" aria-label="Open Menu">☰</button>
+        <button id="menu-btn" class="menu-icon" aria-label="Open Menu" onclick="toggleDropdown()">☰</button>
+        <div class="dropdown-toggle" id="dropdownSelect">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    <div id="dropdown-menu" class="dropdown-menu" aria-hidden="true">
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#team">Our Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
     <main>
         <section id="about">
             <h2>About Us</h2>
@@ -188,6 +221,20 @@
     <footer>
         <p>&copy; 2025 Gateway Corporate Solutions. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownSelect');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function(event) {
+            const menuBtn = document.getElementById('menu-btn');
+            const dropdown = document.getElementById('dropdownSelect');
+            if (!dropdown.contains(event.target) && event.target !== menuBtn) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
     <script src="app.js" defer></script>
 </body>
 </html>
