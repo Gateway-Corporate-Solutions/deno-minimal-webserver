@@ -11,6 +11,60 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .about-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .about-column.card {
+            flex: 1 1 350px;
+            background-color: rgb(26, 31, 31);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        #menu-btn {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .dropdown-toggle {
+            position: fixed;
+            top: 3.5rem;
+            right: 1rem;
+            z-index: 1000;
+            display: none;
+            background-color: rgb(26, 31, 31);;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-toggle ul {
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        .dropdown-toggle ul li {
+            padding: 0.5rem 1rem;
+        }
+        .dropdown-toggle ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            display: block;
+        }
+        .dropdown-toggle ul li:hover {
+            background-color: rgb(26, 31, 31);;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,28 +80,30 @@
                 <h2>Gateway Corp</h2>
             </div>
         </nav>
-        <button id="menu-btn" class="menu-icon" aria-label="Open Menu">☰</button>
+        <button id="menu-btn" class="menu-icon" aria-label="Open Menu" onclick="toggleDropdown()">☰</button>
+        <div class="dropdown-toggle" id="dropdownSelect">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    <div id="dropdown-menu" class="dropdown-menu" aria-hidden="true">
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#team">Our Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
     <main>
         <section id="about">
             <h2>About Us</h2>
             <div class="about-content">
                 <p class="lead-text main-paragraph">Gateway Corporate Solutions is a team of passionate developers and designers dedicated to building high-quality software for businesses of all sizes. We are committed to providing cutting-edge technical solutions to our clients in the St. Louis area and beyond.</p>
                 <div class="about-columns">
-                    <div class="about-column">
-                        <p>Our team has extensive experience in web development, software engineering, and AI integration, ensuring that we can meet the diverse needs of our clients. Whether you need a new website, a custom software solution, or AI-powered tools, we have the expertise to help you succeed.</p>
+                    <div class="about-column card">
+                        <h3 class="card-title">What We Do</h3>
+                        <p>We specialize in web development, software engineering, and AI integration. From new websites to advanced AI tools, we deliver tailored solutions to fit your business needs.</p>
                     </div>
-                    <div class="about-column">
-                        <p>We understand the importance of technology in today's business, and we are committed to bringing you the best solutions to help you thrive in a competitive market. Our goal is to be your trusted partner in technology, providing you with the tools and support you need to achieve your business objectives.</p>
+                    <div class="about-column card">
+                        <h3 class="card-title">Our Commitment</h3>
+                        <p>Technology is essential to your growth. We partner with you to provide modern tools and expert support, helping your business thrive in today's competitive landscape.</p>
                     </div>
                 </div>
             </div>
@@ -77,21 +133,18 @@
         <section id="team">
             <h2>Our Team</h2>
             <div class="team-grid">
-                <!-- Founders -->
                 <div class="card card-centered team-card founder-card">
                     <div class="icon-circle icon-primary team-avatar founder-avatar">👨‍💻</div>
-                    <h3 class="card-title">Apollyon</h3>
+                    <h3 class="card-title">Sam Roux</h3>
                     <p class="role-text role-primary team-role founder-role">Co-Founder | CTO</p>
                     <p class="card-text team-bio">Technical visionary leading our development initiatives and driving innovation in emerging technologies.</p>
                 </div>
                 <div class="card card-centered team-card founder-card">
                     <div class="icon-circle icon-primary team-avatar founder-avatar">🎨</div>
-                    <h3 class="card-title">Steven</h3>
+                    <h3 class="card-title">Stephen Perso</h3>
                     <p class="role-text role-primary team-role founder-role">Co-Founder | Lead Design</p>
                     <p class="card-text team-bio">Creative director responsible for our visual identity and user experience design excellence.</p>
                 </div>
-                
-                <!-- Contributors -->
                 <div class="card card-centered team-card contributor-card">
                     <div class="icon-circle icon-secondary team-avatar contributor-avatar">🌟</div>
                     <h3 class="card-title">Slip</h3>
@@ -100,7 +153,7 @@
                 </div>
                 <div class="card card-centered team-card contributor-card">
                     <div class="icon-circle icon-secondary team-avatar contributor-avatar">💼</div>
-                    <h3 class="card-title">Doug</h3>
+                    <h3 class="card-title">Doug Roux</h3>
                     <p class="role-text role-secondary team-role contributor-role">Mentor | Business Expert</p>
                     <p class="card-text team-bio">Business strategy consultant with extensive experience in scaling technology companies.</p>
                 </div>
@@ -166,8 +219,22 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Gateway Corporate Solutions. All rights reserved.</p>
+        <p>&copy; 2025 Gateway Corporate Solutions. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownSelect');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function(event) {
+            const menuBtn = document.getElementById('menu-btn');
+            const dropdown = document.getElementById('dropdownSelect');
+            if (!dropdown.contains(event.target) && event.target !== menuBtn) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
     <script src="app.js" defer></script>
 </body>
 </html>
