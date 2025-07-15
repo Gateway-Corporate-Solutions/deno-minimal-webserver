@@ -1,240 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gateway Corporate Solutions - Premiere technology services for the St. Louis area. Web development, AI integration, custom software solutions and more.">
+    <meta name="description"
+        content="Gateway Corporate Solutions - Premiere technology services for the St. Louis area. Web development, AI integration, custom software solutions and more.">
     <meta name="author" content="Gateway Corporate Solutions">
-    <meta name="keywords" content="Web Development, Software Development, AI Integration, Content Distribution, System Maintenance, St. Louis Technology Services">
+    <meta name="keywords"
+        content="Web Development, Software Development, AI Integration, Content Distribution, System Maintenance, St. Louis Technology Services">
     <title>Gateway Corporate Solutions | Technology Services St. Louis</title>
+    <link rel="stylesheet" href="components.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Page-specific styling for Gateway Corporate Solutions */
         .about-content {
             max-width: 900px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
-        .about-columns {
+
+        .hero-buttons {
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Enhanced projects highlight with subtle animation */
+        .projects-highlight {
+            background: linear-gradient(135deg,
+                    rgba(15, 15, 15, 0.95) 0%,
+                    rgba(30, 41, 59, 0.98) 100%);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            transform: scale(1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .projects-highlight:hover {
+            transform: translateY(-4px);
+            border-color: rgba(148, 163, 184, 0.4);
+            box-shadow:
+                0 20px 40px -15px rgba(0, 0, 0, 0.4),
+                0 10px 20px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Grid improvements for better spacing */
+        .grid {
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        /* Hero content improvements */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            background: linear-gradient(135deg,
+                    #f8fafc 0%,
+                    #e2e8f0 50%,
+                    #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .hero-text {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Service cards specific styling */
+        .grid-auto-fit>.card {
+            min-height: 280px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 1.5rem;
+            flex-direction: column;
         }
-        .about-column.card {
-            flex: 1 1 350px;
-            background-color: rgb(26, 31, 31);
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        #menu-btn {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1001;
-        }
-        .dropdown-toggle {
-            position: fixed;
-            top: 3.5rem;
-            right: 1rem;
-            z-index: 1000;
-            display: none;
-            background-color: rgb(26, 31, 31);;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .dropdown-toggle ul {
-            list-style: none;
-            margin: 0;
-            padding: 0.5rem 0;
-        }
-        .dropdown-toggle ul li {
-            padding: 0.5rem 1rem;
-        }
-        .dropdown-toggle ul li a {
-            text-decoration: none;
-            color: whitesmoke;
-            display: block;
-        }
-        .dropdown-toggle ul li:hover {
-            background-color: rgb(26, 31, 31);;
+
+        .grid-auto-fit>.card .card-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="hero">
-            <h1>Gateway Corporate Solutions</h1>
-            <p>Premiere technology services for the St. Louis area</p>
-            <p class="hero-subtitle">Guiding You Towards Unprecedented Success</p>
-            <button id="demo-btn" aria-label="Get Started">Get Started</button>
-            <button id="products-btn" aria-label="Learn More">Learn More</button>
-        </div>
-        <nav class="navbar" aria-label="Main Navigation">
-            <div class="nav-left">
-                <h2>Gateway Corp</h2>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Gateway Corporate Solutions</h1>
+                <p class="hero-subtitle">Premiere technology services for the St. Louis area</p>
+                <p class="hero-text">Guiding You Towards Unprecedented Success</p>
+
+                <div class="hero-buttons">
+                    <button id="demo-btn" class="btn btn-primary btn-lg" aria-label="Get Started">Get Started</button>
+                    <button id="products-btn" class="btn btn-secondary btn-lg" aria-label="Learn More">Learn
+                        More</button>
+                </div>
+            </div>
+        </section>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="#" class="nav-brand">Gateway Corp</a>
+                <div class="nav-indicator"></div>
             </div>
         </nav>
-        <button id="menu-btn" class="menu-icon" aria-label="Open Menu" onclick="toggleDropdown()">☰</button>
-        <div class="dropdown-toggle" id="dropdownSelect">
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="scroll-progress"></div>
+
+        <button id="menu-btn" class="menu-icon" aria-label="Open Menu">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div id="dropdown-menu" class="dropdown-menu">
+            <div class="menu-container">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#team" class="nav-link">Our Team</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <p class="lead-text main-paragraph">Gateway Corporate Solutions is a team of passionate developers and designers dedicated to building high-quality software for businesses of all sizes. We are committed to providing cutting-edge technical solutions to our clients in the St. Louis area and beyond.</p>
-                <div class="about-columns">
-                    <div class="about-column card">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="text-lead">Gateway Corporate Solutions is a team of passionate developers and designers
+                    dedicated to building high-quality software for businesses of all sizes. We are committed to
+                    providing cutting-edge technical solutions to our clients in the St. Louis area and beyond.</p>
+            </div>
+
+            <div class="grid grid-2 gap-xl">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="icon-circle icon-lg icon-primary">💻</div>
                         <h3 class="card-title">What We Do</h3>
-                        <p>We specialize in web development, software engineering, and AI integration. From new websites to advanced AI tools, we deliver tailored solutions to fit your business needs.</p>
                     </div>
-                    <div class="about-column card">
+                    <div class="card-body">
+                        <p class="card-text">We specialize in web development, software engineering, and AI integration.
+                            From new websites to advanced AI tools, we deliver tailored solutions to fit your business
+                            needs.</p>
+                    </div>
+                </div>
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="icon-circle icon-lg icon-secondary">🎯</div>
                         <h3 class="card-title">Our Commitment</h3>
-                        <p>Technology is essential to your growth. We partner with you to provide modern tools and expert support, helping your business thrive in today's competitive landscape.</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Technology is essential to your growth. We partner with you to provide
+                            modern tools and expert support, helping your business thrive in today's competitive
+                            landscape.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="projects">
-            <h2>Some of Our Projects</h2>
-            <div class="projects-grid">
-                <div class="card project-card">
-                    <h3 class="card-title">Open-Source Fingerprinting</h3>
-                    <p class="card-text card-text-large">Explore our open-source project for digital fingerprinting, designed to enhance security and user experience with FP-Devicer and FP-Snatch.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View FP-Devicer on GitHub</a>
-                        <a href="#" class="project-link">View FP-Snatch on GitHub</a>
-                        <a href="#" class="project-link">View Your Digital Fingerprint</a>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Some of Our Projects</h2>
+            </div>
+
+            <div class="grid grid-2 gap-xl">
+                <div class="card card-primary projects-highlight">
+                    <div class="card-header">
+                        <div class="icon-circle icon-lg icon-primary">🔍</div>
+                        <h3 class="card-title">Open-Source Fingerprinting</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Explore our open-source project for digital fingerprinting, designed to
+                            enhance security and user experience with FP-Devicer and FP-Snatch.</p>
+                        <div class="flex flex-wrap gap-sm mt-md">
+                            <a href="#" class="btn btn-outline btn-sm">View FP-Devicer</a>
+                            <a href="#" class="btn btn-outline btn-sm">View FP-Snatch</a>
+                            <a href="#" class="btn btn-secondary btn-sm">Try Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card project-card">
-                    <h3 class="card-title">AI Service Representatives</h3>
-                    <p class="card-text card-text-large">Discover our innovative AI service representatives project with VOIP-TBS, integrating advanced AI with VOIP and SMS technology.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Read the VOIP-TBS Whitepaper</a>
-                        <a href="#" class="project-link">Learn More</a>
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="icon-circle icon-lg icon-secondary">🤖</div>
+                        <h3 class="card-title">AI Service Representatives</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Discover our innovative AI service representatives project with VOIP-TBS,
+                            integrating advanced AI with VOIP and SMS technology.</p>
+                        <div class="flex flex-wrap gap-sm mt-md">
+                            <a href="voip-tbs.html" class="btn btn-primary btn-sm">View Project</a>
+                            <a href="#" class="btn btn-outline btn-sm">Whitepaper</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="team">
-            <h2>Our Team</h2>
-            <div class="team-grid">
-                <div class="card card-centered team-card founder-card">
-                    <div class="icon-circle icon-primary team-avatar founder-avatar">👨‍💻</div>
-                    <h3 class="card-title">Sam Roux</h3>
-                    <p class="role-text role-primary team-role founder-role">Co-Founder | CTO</p>
-                    <p class="card-text team-bio">Technical visionary leading our development initiatives and driving innovation in emerging technologies.</p>
+        <!-- Team Section -->
+        <section id="team" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Our Team</h2>
+            </div>
+
+            <div class="grid grid-3 gap-lg">
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">👨‍💻</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Sam Roux</h3>
+                        <p class="text-secondary">Co-Founder | CTO</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Technical visionary leading our development initiatives and driving
+                            innovation in emerging technologies.</p>
+                    </div>
                 </div>
-                <div class="card card-centered team-card founder-card">
-                    <div class="icon-circle icon-primary team-avatar founder-avatar">🎨</div>
-                    <h3 class="card-title">Stephen Perso</h3>
-                    <p class="role-text role-primary team-role founder-role">Co-Founder | Lead Design</p>
-                    <p class="card-text team-bio">Creative director responsible for our visual identity and user experience design excellence.</p>
+
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">🎨</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Stephen Perso</h3>
+                        <p class="text-secondary">Co-Founder | Lead Design</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Creative director responsible for our visual identity and user experience
+                            design excellence.</p>
+                    </div>
                 </div>
-                <div class="card card-centered team-card contributor-card">
-                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">🌟</div>
-                    <h3 class="card-title">Slip</h3>
-                    <p class="role-text role-secondary team-role contributor-role">Mentor | Angel Contributor</p>
-                    <p class="card-text team-bio">Strategic advisor providing guidance and investment support for our growth initiatives.</p>
+
+                <div class="card card-centered">
+                    <div class="icon-circle icon-lg icon-secondary">🌟</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Slip</h3>
+                        <p class="text-accent">Mentor | Angel Contributor</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Strategic advisor providing guidance and investment support for our growth
+                            initiatives.</p>
+                    </div>
                 </div>
-                <div class="card card-centered team-card contributor-card">
-                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">💼</div>
-                    <h3 class="card-title">Doug Roux</h3>
-                    <p class="role-text role-secondary team-role contributor-role">Mentor | Business Expert</p>
-                    <p class="card-text team-bio">Business strategy consultant with extensive experience in scaling technology companies.</p>
+
+                <div class="card card-centered">
+                    <div class="icon-circle icon-lg icon-secondary">💼</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Doug Roux</h3>
+                        <p class="text-accent">Mentor | Business Expert</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Business strategy consultant with extensive experience in scaling
+                            technology companies.</p>
+                    </div>
                 </div>
-                <div class="card card-centered team-card contributor-card">
-                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">⚡</div>
-                    <h3 class="card-title">Jackson Alvarez</h3>
-                    <p class="role-text role-secondary team-role contributor-role">Angel Contributor</p>
-                    <p class="card-text team-bio">Investment partner focused on supporting innovative technology solutions and startups.</p>
+
+                <div class="card card-centered">
+                    <div class="icon-circle icon-lg icon-secondary">⚡</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Jackson Alvarez</h3>
+                        <p class="text-accent">Angel Contributor</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Investment partner focused on supporting innovative technology solutions
+                            and startups.</p>
+                    </div>
                 </div>
-                <div class="card card-centered team-card contributor-card">
-                    <div class="icon-circle icon-secondary team-avatar contributor-avatar">🚀</div>
-                    <h3 class="card-title">Tyler</h3>
-                    <p class="role-text role-secondary team-role contributor-role">Intern | Developer</p>
-                    <p class="card-text team-bio">Enthusiastic intern contributing to development projects and learning cutting-edge technologies.</p>
+
+                <div class="card card-centered">
+                    <div class="icon-circle icon-lg icon-success">🚀</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Tyler</h3>
+                        <p class="text-success">Intern | Developer</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Enthusiastic intern contributing to development projects and learning
+                            cutting-edge technologies.</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="card card-centered service-card">
-                    <div class="icon-circle icon-primary service-icon">🌐</div>
-                    <h3 class="card-title">Web Development & Design</h3>
-                    <p class="card-text">Creating stunning, responsive websites that drive results. From concept to launch, we build web solutions that engage your audience and grow your business.</p>
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+            </div>
+
+            <div class="grid grid-auto-fit gap-lg">
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">🌐</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Web Development & Design</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Creating stunning, responsive websites that drive results. From concept to
+                            launch, we build web solutions that engage your audience and grow your business.</p>
+                    </div>
                 </div>
-                <div class="card card-centered service-card">
-                    <div class="icon-circle icon-primary service-icon">⚙️</div>
-                    <h3 class="card-title">Software & Custom Tools</h3>
-                    <p class="card-text">Tailored software solutions designed specifically for your business needs. We develop custom applications that streamline operations and boost productivity.</p>
+
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">⚙️</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Software & Custom Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Tailored software solutions designed specifically for your business needs.
+                            We develop custom applications that streamline operations and boost productivity.</p>
+                    </div>
                 </div>
-                <div class="card card-centered service-card">
-                    <div class="icon-circle icon-primary service-icon">🤖</div>
-                    <h3 class="card-title">AI Integration</h3>
-                    <p class="card-text">Harness the power of artificial intelligence to transform your business processes. From chatbots to predictive analytics, we integrate AI seamlessly into your workflow.</p>
+
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">🤖</div>
+                    <div class="card-header">
+                        <h3 class="card-title">AI Integration</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Harness the power of artificial intelligence to transform your business
+                            processes. From chatbots to predictive analytics, we integrate AI seamlessly into your
+                            workflow.</p>
+                    </div>
                 </div>
-                <div class="card card-centered service-card">
-                    <div class="icon-circle icon-primary service-icon">📡</div>
-                    <h3 class="card-title">Content Distribution</h3>
-                    <p class="card-text">Maximize your reach with strategic content distribution across multiple platforms. We help you deliver the right message to the right audience at the right time.</p>
+
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">📡</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Content Distribution</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Maximize your reach with strategic content distribution across multiple
+                            platforms. We help you deliver the right message to the right audience at the right time.
+                        </p>
+                    </div>
                 </div>
-                <div class="card card-centered service-card">
-                    <div class="icon-circle icon-primary service-icon">🔧</div>
-                    <h3 class="card-title">Maintenance & System Upgrades</h3>
-                    <p class="card-text">Keep your systems running smoothly with our comprehensive maintenance and upgrade services. We ensure your technology stays current and secure.</p>
+
+                <div class="card card-primary card-centered">
+                    <div class="icon-circle icon-lg icon-primary">🔧</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Maintenance & System Upgrades</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Keep your systems running smoothly with our comprehensive maintenance and
+                            upgrade services. We ensure your technology stays current and secure.</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p class="lead-text">Ready to transform your business with cutting-edge technology? We'd love to hear from you.</p>
-            <p>If you would like to contact us, please fill out the form below or send us an email</p>
-            <form id="contact-form" aria-label="Contact Form">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required aria-required="true" placeholder="Enter your full name">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com">
-                <label for="referral">How did you hear about us? (optional):</label>
-                <input type="text" id="referral" name="referral" placeholder="Search engine, referral, social media, etc.">
-                <label for="message">How can we help you?:</label>
-                <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about your project or how we can assist you..."></textarea>
-                <button type="submit" aria-label="Send Message">Send Message</button>
-            </form>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="text-lead">Ready to transform your business with cutting-edge technology? We'd love to hear
+                    from you.</p>
+            </div>
+
+            <div class="container" style="max-width: 600px;">
+                <form id="contact-form" class="form" aria-label="Contact Form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name:</label>
+                        <input type="text" id="name" name="name" class="form-input" required aria-required="true"
+                            placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email:</label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-required="true"
+                            placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referral" class="form-label">How did you hear about us? (optional):</label>
+                        <input type="text" id="referral" name="referral" class="form-input"
+                            placeholder="Search engine, referral, social media, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">How can we help you?:</label>
+                        <textarea id="message" name="message" class="form-textarea" required aria-required="true"
+                            placeholder="Tell us about your project or how we can assist you..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-full btn-lg" aria-label="Send Message">Send
+                        Message</button>
+                </form>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Gateway Corporate Solutions. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4 gap-lg mb-xl" style="text-align: left;">
+                <div>
+                    <h4 class="heading-4 mb-md">Gateway Corp</h4>
+                    <p class="text-small">Premiere technology services for the St. Louis area. Guiding you towards
+                        unprecedented success.</p>
+                </div>
+                <div>
+                    <h4 class="heading-4 mb-md">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="mb-xs"><a href="#services" class="text-small footer-link">Web Development</a></li>
+                        <li class="mb-xs"><a href="#services" class="text-small footer-link">AI Integration</a></li>
+                        <li class="mb-xs"><a href="#services" class="text-small footer-link">Custom Software</a></li>
+                        <li class="mb-xs"><a href="#services" class="text-small footer-link">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="heading-4 mb-md">Company</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="mb-xs"><a href="#about" class="text-small footer-link">About</a></li>
+                        <li class="mb-xs"><a href="#team" class="text-small footer-link">Team</a></li>
+                        <li class="mb-xs"><a href="#projects" class="text-small footer-link">Projects</a></li>
+                        <li class="mb-xs"><a href="#contact" class="text-small footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="heading-4 mb-md">Connect</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="mb-xs"><a href="#" class="text-small footer-link">LinkedIn</a></li>
+                        <li class="mb-xs"><a href="#" class="text-small footer-link">GitHub</a></li>
+                        <li class="mb-xs"><a href="#" class="text-small footer-link">Email</a></li>
+                        <li class="mb-xs"><a href="#" class="text-small footer-link">Phone</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--spacing-lg); text-align: center;">
+                <p class="text-base">&copy; 2025 Gateway Corporate Solutions. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
     <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdownSelect');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        // Enhanced Navbar Functionality
+        class NavbarController {
+            constructor() {
+                this.navbar = document.querySelector('.navbar');
+                this.menuBtn = document.getElementById('menu-btn');
+                this.dropdownMenu = document.getElementById('dropdown-menu');
+                this.scrollProgress = document.querySelector('.scroll-progress');
+                this.lastScrollY = window.scrollY;
+                this.isMenuOpen = false;
+
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.updateScrollProgress();
+            }
+
+            bindEvents() {
+                // Menu toggle
+                this.menuBtn.addEventListener('click', () => this.toggleMenu());
+
+                // Close menu when clicking on links
+                this.dropdownMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => this.closeMenu());
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isMenuOpen) {
+                        this.closeMenu();
+                    }
+                });
+
+                // Scroll events
+                window.addEventListener('scroll', () => {
+                    this.handleScroll();
+                    this.updateScrollProgress();
+                }, { passive: true });
+
+                // Resize event
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768 && this.isMenuOpen) {
+                        this.closeMenu();
+                    }
+                });
+            }
+
+            toggleMenu() {
+                if (this.isMenuOpen) {
+                    this.closeMenu();
+                } else {
+                    this.openMenu();
+                }
+            }
+
+            openMenu() {
+                this.isMenuOpen = true;
+                this.menuBtn.classList.add('open');
+                this.dropdownMenu.style.display = 'block';
+
+                // Trigger reflow for animation
+                this.dropdownMenu.offsetHeight;
+
+                this.dropdownMenu.classList.add('show');
+                document.body.style.overflow = 'hidden';
+
+                // Add entrance animation to menu items
+                setTimeout(() => {
+                    this.dropdownMenu.querySelectorAll('li').forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.classList.add('animate-in');
+                    });
+                }, 100);
+            }
+
+            closeMenu() {
+                this.isMenuOpen = false;
+                this.menuBtn.classList.remove('open');
+                this.dropdownMenu.classList.remove('show');
+                document.body.style.overflow = '';
+
+                setTimeout(() => {
+                    this.dropdownMenu.style.display = 'none';
+                    this.dropdownMenu.querySelectorAll('li').forEach(item => {
+                        item.classList.remove('animate-in');
+                        item.style.animationDelay = '';
+                    });
+                }, 600);
+            }
+
+            handleScroll() {
+                const currentScrollY = window.scrollY;
+
+                // Add scrolled class for styling
+                if (currentScrollY > 100) {
+                    this.navbar.classList.add('scrolled');
+                } else {
+                    this.navbar.classList.remove('scrolled');
+                }
+
+                // Hide/show navbar on scroll
+                if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+                    this.navbar.classList.add('hidden');
+                } else {
+                    this.navbar.classList.remove('hidden');
+                }
+
+                this.lastScrollY = currentScrollY;
+            }
+
+            updateScrollProgress() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                this.scrollProgress.style.width = scrolled + '%';
+            }
         }
 
-        document.addEventListener('click', function(event) {
+        // Initialize navbar when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new NavbarController();
+        });
+
+        // Legacy function for compatibility (can be removed if not used elsewhere)
+        function toggleDropdown() {
+            // This function is kept for compatibility but the new system handles everything
+            console.log('Legacy toggleDropdown called - using new NavbarController instead');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight - 20;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('click', function (event) {
             const menuBtn = document.getElementById('menu-btn');
-            const dropdown = document.getElementById('dropdownSelect');
-            if (!dropdown.contains(event.target) && event.target !== menuBtn) {
-                dropdown.style.display = 'none';
+            const dropdown = document.getElementById('dropdown-menu');
+            if (!dropdown.contains(event.target) && event.target !== menuBtn && !menuBtn.contains(event.target)) {
+                if (dropdown.classList.contains('show')) {
+                    // Use the new close method if available
+                    if (window.navbarController) {
+                        window.navbarController.closeMenu();
+                    }
+                }
             }
         });
     </script>
     <script src="app.js" defer></script>
 </body>
+
 </html>
