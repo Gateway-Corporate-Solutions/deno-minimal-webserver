@@ -413,21 +413,21 @@ body {
 
 /* Icon Sizes */
 .icon-sm {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-}
-
-.icon-md {
     width: 80px;
     height: 80px;
     font-size: 2rem;
 }
 
-.icon-lg {
+.icon-md {
     width: 90px;
     height: 90px;
     font-size: 3.5rem;
+}
+
+.icon-lg {
+    width: 100px;
+    height: 100px;
+    font-size: 4.0rem;
 }
 
 /* Icon Colors */
