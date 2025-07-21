@@ -92,6 +92,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
 
@@ -368,6 +369,7 @@
             font-weight: 700;
             transition: all 0.3s ease;
             opacity: 0.8;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
 
@@ -649,22 +651,22 @@
         <div class="container" style="max-width: 600px; margin: 0 auto;">
             <div class="roi-calculator">
                 <div class="calculator-row">
-                    <label class="form-label">Number of properties:</label>
+                    <label class="form-label" for="properties">Number of properties:</label>
                     <input type="number" class="calculator-input" id="properties" value="2" min="1">
                 </div>
 
                 <div class="calculator-row">
-                    <label class="form-label">Bookings per month (per property):</label>
+                    <label class="form-label" for="bookingsPerMonth">Bookings per month (per property):</label>
                     <input type="number" class="calculator-input" id="bookingsPerMonth" value="8" min="1">
                 </div>
 
                 <div class="calculator-row">
-                    <label class="form-label">Guest messages per booking:</label>
+                    <label class="form-label" for="messagesPerBooking">Guest messages per booking:</label>
                     <input type="number" class="calculator-input" id="messagesPerBooking" value="12" min="1">
                 </div>
 
                 <div class="calculator-row">
-                    <label class="form-label">Minutes per response:</label>
+                    <label class="form-label" for="minutesPerResponse">Minutes per response:</label>
                     <input type="number" class="calculator-input" id="minutesPerResponse" value="3" min="1">
                 </div>
 
