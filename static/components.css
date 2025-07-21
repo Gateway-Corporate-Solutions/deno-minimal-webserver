@@ -693,6 +693,19 @@ body {
   backface-visibility: hidden;
 }
 
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== HERO COMPONENTS ===== */
 .hero {
     min-height: 100vh;
