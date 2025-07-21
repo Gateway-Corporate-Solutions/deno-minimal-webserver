@@ -156,7 +156,6 @@ body {
 .text-base {
   color: var(--gray-700);
   line-height: 1.7;
-  margin-bottom: var(--spacing-md);
   font-size: var(--font-size-base);
 }
 
@@ -1341,4 +1340,8 @@ a:focus-visible {
   margin-bottom: var(--spacing-md);
   display: flex;
   justify-content: center;
+}
+
+.footer .container {
+  padding: var(--spacing-md);
 }
