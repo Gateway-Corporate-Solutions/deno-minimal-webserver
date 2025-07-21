@@ -616,6 +616,83 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Enhanced Hamburger Menu */
+.menu-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-icon:hover {
+  background: rgba(66, 153, 225, 0.1);
+  border-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+/* Morphing hamburger animation */
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--gray-800);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+/* Menu open state - morphs to X */
+.menu-icon.open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+  background: var(--secondary);
+}
+
+.menu-icon.open .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-icon.open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -3px);
+  background: var(--secondary);
+}
+
+/* GPU acceleration for smooth animations */
+.hero::before,
+.hero::after,
+.navbar,
+.dropdown-menu,
+.menu-icon {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* ===== HERO COMPONENTS ===== */
 .hero {
     min-height: 100vh;
