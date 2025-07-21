@@ -1,0 +1,634 @@
+/* 
+ * Gateway Corporate Solutions - Site-Wide Enhancements
+ * 
+ * This file extends components.css with Gateway-specific styling and enhanced navbar functionality.
+ * Architecture: components.css (base) → styles.css (site enhancements) → inline CSS (page-specific)
+ */
+
+/* Enhanced Navbar System with Advanced Animations */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(0);
+  animation: slideDownNavbar 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Navbar scroll effects */
+.navbar.scrolled {
+  background: rgba(15, 15, 15, 0.98);
+  backdrop-filter: blur(25px);
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Navbar entrance animation */
+@keyframes slideDownNavbar {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Nav brand styling */
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg,
+      #f8fafc 0%,
+      #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  transition: var(--transition);
+  letter-spacing: -0.02em;
+}
+
+.nav-brand:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg,
+      #f1f5f9 0%,
+      #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Advanced navigation indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      rgba(100, 116, 139, 0.6) 0%,
+      rgba(148, 163, 184, 0.8) 50%,
+      rgba(100, 116, 139, 0.6) 100%);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: indicatorPulse 3s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleX(0.9);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scaleX(1);
+  }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      rgba(100, 116, 139, 0.8) 0%,
+      rgba(148, 163, 184, 0.9) 50%,
+      rgba(100, 116, 139, 0.8) 100%);
+  z-index: 1001;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 1px 3px rgba(100, 116, 139, 0.3);
+}
+
+/* Enhanced Hamburger Menu */
+.menu-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-icon:hover {
+  background: rgba(66, 153, 225, 0.1);
+  border-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+/* Morphing hamburger animation */
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--gray-800);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+/* Menu open state - morphs to X */
+.menu-icon.open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+  background: var(--secondary);
+}
+
+.menu-icon.open .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-icon.open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -3px);
+  background: var(--secondary);
+}
+
+/* Enhanced dropdown menu */
+.dropdown-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%);
+  backdrop-filter: blur(25px);
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.nav-list {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 1.5rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-list li.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-list .nav-link {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.nav-list .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.nav-list .nav-link:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-list .nav-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Gateway Corporate branding enhancements */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced hero background effects */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 25% 25%,
+      rgba(71, 85, 105, 0.08) 0%,
+      transparent 50%);
+  animation: heroGlow 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 75% 75%,
+      rgba(51, 65, 85, 0.06) 0%,
+      transparent 50%);
+  animation: heroGlow 15s ease-in-out infinite alternate-reverse;
+  z-index: -1;
+}
+
+/* Section improvements */
+.section {
+  position: relative;
+}
+
+.section-title {
+  color: #f8fafc;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.text-lead {
+  color: #cbd5e1;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.125rem;
+}
+
+/* Team section specific improvements */
+.text-secondary,
+.text-accent,
+.text-success {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.text-secondary {
+  color: #94a3b8;
+}
+
+.text-accent {
+  color: #a78bfa;
+}
+
+.text-success {
+  color: #6ee7b7;
+}
+
+@keyframes heroGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(-10px, -10px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero::before,
+  .hero::after,
+  .nav-indicator {
+    animation: none;
+  }
+
+  .navbar {
+    animation: none;
+  }
+}
+
+/* GPU acceleration for smooth animations */
+.hero::before,
+.hero::after,
+.navbar,
+.dropdown-menu,
+.menu-icon {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Gateway-specific color enhancements */
+.projects-highlight {
+  background: linear-gradient(135deg,
+      rgba(15, 15, 15, 0.95) 0%,
+      rgba(30, 41, 59, 0.98) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(100, 116, 139, 0.1) 50%,
+      transparent 100%);
+  transition: left 0.6s ease;
+}
+
+.projects-highlight:hover::before {
+  left: 100%;
+}
+
+.projects-highlight .icon-circle {
+  background: linear-gradient(135deg,
+      rgba(100, 116, 139, 0.2) 0%,
+      rgba(71, 85, 105, 0.3) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  color: #e2e8f0;
+}
+
+/* Card system overrides for more sophisticated look */
+.card {
+  background: linear-gradient(135deg,
+      rgba(15, 15, 15, 0.9) 0%,
+      rgba(30, 41, 59, 0.95) 100%);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(148, 163, 184, 0.3) 50%,
+      transparent 100%);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(100, 116, 139, 0.4);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(148, 163, 184, 0.05);
+}
+
+.card-primary {
+  background: linear-gradient(135deg,
+      rgba(15, 15, 15, 0.95) 0%,
+      rgba(30, 41, 59, 0.98) 100%);
+  border-color: rgba(71, 85, 105, 0.25);
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(71, 85, 105, 0.15);
+  position: relative;
+}
+
+.card-title {
+  color: #f8fafc;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card-text {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Icon circle improvements */
+.icon-circle {
+  background: linear-gradient(135deg,
+      rgba(71, 85, 105, 0.15) 0%,
+      rgba(51, 65, 85, 0.25) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  backdrop-filter: blur(8px);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,
+      rgba(71, 85, 105, 0.25) 0%,
+      rgba(51, 65, 85, 0.35) 100%);
+}
+
+/* Button improvements */
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  color: #94a3b8;
+}
+
+.btn-outline:hover {
+  background: rgba(71, 85, 105, 0.1);
+  border-color: rgba(100, 116, 139, 0.5);
+  color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg,
+      rgba(71, 85, 105, 0.8) 0%,
+      rgba(51, 65, 85, 0.9) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  color: #f1f5f9;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg,
+      rgba(71, 85, 105, 0.9) 0%,
+      rgba(51, 65, 85, 1) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.4);
+}
+
+/* Form enhancements for Gateway branding */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(100, 116, 139, 0.6);
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #64748b;
+}
+
+.form-label {
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+/* Footer improvements */
+.footer {
+  background: linear-gradient(135deg,
+      rgba(15, 15, 15, 0.98) 0%,
+      rgba(30, 41, 59, 0.95) 100%);
+  border-top: 1px solid rgba(71, 85, 105, 0.2);
+}
+
+.footer .heading-4 {
+  color: #f1f5f9;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.footer .text-small {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Footer link styling */
+.footer-link {
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #94a3b8;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.25rem;
+  }
+
+  .nav-list .nav-link {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-icon {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .nav-list .nav-link {
+    font-size: 1.25rem;
+  }
+}
