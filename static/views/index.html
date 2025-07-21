@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Gateway Corporate Solutions - Premiere technology services for the St. Louis area. Web development, AI integration, custom software solutions and more.">
@@ -370,7 +371,7 @@
             </div>
 
             <div class="container" style="display: flex; justify-content: center;">
-                <form id="contact-form" style="width: 95%; max-width: 800px; justify-content: center; text-align: center;" class="form" aria-label="Contact Form">
+                <form id="contact-form" method="post" action="contact" style="width: 95%; max-width: 800px; justify-content: center; text-align: center;" class="form" aria-label="Contact Form">
                     <div class="form-group">
                         <label for="name" style="text-align: left" class="form-label">Your Name:</label>
                         <input type="text" id="name" name="name" class="form-input" required aria-required="true"
@@ -394,7 +395,7 @@
                         <textarea id="message" name="message" class="form-textarea" required aria-required="true"
                             placeholder="Tell us about your project or how we can assist you..."></textarea>
                     </div>
-
+                    <div class="g-recaptcha" data-sitekey="6LcIVHArAAAAAPZ1scQS8vrN_JRhCBzjOoJHuw2i"></div>
                     <button type="submit" style="justify-self: center;" class="btn btn-primary w-full btn-lg" aria-label="Send Message">Send
                         Message</button>
                 </form>

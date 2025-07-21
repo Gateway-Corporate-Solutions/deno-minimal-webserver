@@ -1252,3 +1252,9 @@ a:focus-visible {
         transform: rotate(360deg);
     }
 }
+
+.g-recaptcha {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+}

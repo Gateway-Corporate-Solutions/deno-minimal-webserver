@@ -1,10 +1,11 @@
 {
   "lock": false,
   "tasks": {
-    "start": "deno run --allow-all main.ts"
+    "start": "deno run --allow-all --env-file=.env.list main.ts"
   },
   "imports": {
-    "oak": "jsr:@oak/oak"
+    "oak": "jsr:@oak/oak",
+    "twilio": "npm:twilio"
   },
   "exclude": [
     "**/*.js"
