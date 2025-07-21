@@ -454,7 +454,7 @@ body {
 /* ===== FORM COMPONENTS ===== */
 .form-container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto auto;
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
@@ -578,7 +578,6 @@ body {
 }
 
 .nav-content {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
