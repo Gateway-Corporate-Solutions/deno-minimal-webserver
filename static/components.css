@@ -290,6 +290,25 @@ body {
   min-width: 200px;
 }
 
+/* Button Groups */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 550px) {
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* ===== CARD COMPONENTS ===== */
 .card {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
@@ -379,6 +398,7 @@ body {
 }
 
 .card-title {
+  text-align: center;
   color: var(--gray-900);
   font-size: var(--font-size-2xl);
   font-weight: 700;
