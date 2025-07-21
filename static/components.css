@@ -774,12 +774,7 @@ body {
 /* ===== HERO COMPONENTS ===== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-light) 50%,
-    #1a365d 100%
-  );
+  background: url('https://i.ibb.co/1f56hqbd/coolbackgrounds-particles-stellar.png');
   display: flex;
   flex-direction: column;
   justify-content: center;
