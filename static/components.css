@@ -887,7 +887,6 @@ body {
 /* ===== SECTION COMPONENTS ===== */
 .section {
   padding: 2rem 5rem;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
