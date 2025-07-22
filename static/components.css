@@ -646,6 +646,13 @@ body {
   align-items: center;
 }
 
+.nav-logo {
+  height: 60px;
+  width: 60px;
+  vertical-align: middle;
+  margin-right: var(--spacing-md);
+}
+
 .nav-brand {
   font-size: var(--font-size-3xl);
   color: var(--white);
