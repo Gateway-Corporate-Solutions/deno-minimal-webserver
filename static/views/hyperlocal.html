@@ -476,7 +476,7 @@
 
         <div class="hero-buttons">
           <button class="btn btn-primary btn-lg">Start Free Trial</button>
-          <button class="btn btn-secondary btn-lg">Watch Demo</button>
+<button id="launchDemoBtn" class="btn btn-accent w-full">Try Demo</button>
         </div>
       </div>
     </section>
@@ -1373,5 +1373,53 @@
       // Initialize
       updateTimeSavings();
     </script>
+        <script>
+  const smsLink = "sms:+13149362201?";
+
+  function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+const demoButton = document.getElementById("launchDemoBtn");
+    if (!demoButton) return;
+
+    demoButton.addEventListener("click", (e) => {
+      if (isMobileDevice()) {
+        e.preventDefault();
+        window.location.href = smsLink;
+      } else {
+        alert("Please scan the QR code on mobile to try the demo.");
+      }
+    });
+  });
+</script>
+<script>
+  function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+  const tryDemoBtn = document.getElementById('tryDemoBtn');
+  const qrOverlay = document.getElementById('qrOverlay');
+  const closeBtn = document.getElementById('closeBtn');
+
+  tryDemoBtn.addEventListener('click', () => {
+    if (!isMobile()) {
+      qrOverlay.style.display = 'flex';
+      qrOverlay.style.flexDirection = 'column';
+    } else {
+      // On mobile you can do something else or nothing
+      alert('Please scan the QR code from a desktop device.');
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    qrOverlay.style.display = 'none';
+  });
+
+  // Optional: close overlay if clicked outside QR container
+  qrOverlay.addEventListener('click', e => {
+    if (e.target === qrOverlay) qrOverlay.style.display = 'none';
+  });
+</script>
   </body>
 </html>
