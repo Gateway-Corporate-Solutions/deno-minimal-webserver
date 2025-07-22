@@ -5,49 +5,6 @@
  * Architecture: components.css (base) → enhancements.css (site enhancements) → inline CSS (page-specific)
  */
 
-/* Enhanced Navbar System with Advanced Animations */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1rem 2rem;
-  background: rgba(15, 15, 15, 0.85);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: translateY(0);
-  animation: slideDownNavbar 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Navbar scroll effects */
-.navbar.scrolled {
-  background: rgba(15, 15, 15, 0.98);
-  -webkit-backdrop-filter: blur(25px);
-  backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.navbar.hidden {
-  transform: translateY(-100%);
-}
-
-/* Navbar entrance animation */
-@keyframes slideDownNavbar {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 /* Advanced navigation indicator */
 .nav-indicator {
   position: absolute;

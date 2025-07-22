@@ -3,23 +3,77 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="HyperLocal - AI Concierge for Vacation Rentals. Provide instant, intelligent guest communication for your Airbnb and vacation rental properties."
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
     >
+
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="enhancements.css">
+    <script src="index.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <meta name="author" content="Gateway Corporate Solutions">
     <meta
       name="keywords"
-      content="Airbnb, Vacation Rental, AI Concierge, Guest Communication, Property Management, AI Assistant"
+      content="gateway corporate, ai concierge, ai travel, web development, st. louis tech"
     >
-    <title>HyperLocal | AI Concierge for Your Vacation Rental</title>
-    <link rel="stylesheet" href="components.css">
-    <link rel="stylesheet" href="enhancements.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    >
+      rel="preconnect"
+      href="https://gatewaycorporate.org/"
+      crossorigin="anonymous"
+    />
+    <link rel="dns-prefetch" href="https://gatewaycorporate.org/" />
+    <meta property="og:locale" content="en_US">
+
+    <!-- Primary Meta Tags -->
+    <title>Gateway Corporate Solutions</title>
+    <meta
+      name="title"
+      content="Gateway Corporate Solutions | Premiere technology services for the St. Louis area"
+    />
+    <meta
+      name="description"
+      content="Gateway Corporate Solutions is your connection to affordable high-quality tech services in your local area."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gatewaycorporate.org/" />
+    <meta
+      property="og:title"
+      content="Gateway Corporate Solutions | Premiere technology services for the St. Louis area"
+    />
+    <meta
+      property="og:description"
+      content="Gateway Corporate Solutions is your connection to affordable high-quality tech services in your local area."
+    />
+    <meta
+      property="og:image"
+      content="https://gatewaycorporate.org/embed.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://gatewaycorporate.org/" />
+    <meta
+      property="twitter:title"
+      content="Gateway Corporate Solutions | Premiere technology services for the St. Louis area"
+    />
+    <meta
+      property="twitter:description"
+      content="Gateway Corporate Solutions is your connection to affordable high-quality tech services in your local area."
+    />
+    <meta
+      property="twitter:image"
+      content="https://gatewaycorporate.org/embed.jpg"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+
     <style>
       /* Global consistency improvements */
       .section-header {
@@ -475,8 +529,13 @@
         </div>
 
         <div class="hero-buttons">
-          <button class="btn btn-primary btn-lg">Start Free Trial</button>
-<button id="launchDemoBtn" class="btn btn-accent w-full">Try Demo</button>
+          <a
+            href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a free trial of HyperLocal."
+            class="btn btn-primary btn-lg"
+          >
+            Start Free Trial
+          </a>
+          <a href="#demo" class="btn btn-accent w-full">Try Demo</a>
         </div>
       </div>
     </section>
@@ -793,7 +852,7 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" style="max-width: 1200px;" class="section">
+    <section id="features" style="max-width: 1200px" class="section">
       <div class="section-header">
         <h2 class="section-title">Smart Concierge Features</h2>
         <p class="text-lead">
@@ -978,16 +1037,29 @@
           </div>
           <div class="card-body">
             <ul class="text-base" style="list-style: none; padding: 0">
-              <li class="mb-sm">✅ <strong>All HyperLocal features</strong> with free upgrades included</li>
-              <li class="mb-sm">✅ Professional install and config for to 3 properties</li>
+              <li class="mb-sm">
+                ✅ <strong>All HyperLocal features</strong> with free upgrades
+                included
+              </li>
+              <li class="mb-sm">
+                ✅ Professional install and config for to 3 properties
+              </li>
               <li class="mb-sm">✅ Unlimited guest messages</li>
               <li class="mb-sm">✅ Property-specific responses</li>
               <li class="mb-sm">✅ Detailed product manual and user guide</li>
-              <li class="mb-sm">✅ 2 hours product training and 4 support hours per month included</li>
+              <li class="mb-sm">
+                ✅ 2 hours product training and 4 support hours per month
+                included
+              </li>
             </ul>
           </div>
           <div class="card-footer">
-            <button class="btn btn-outline w-full">Start Free Trial</button>
+            <a
+              href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a free trial of HyperLocal."
+              class="btn btn-outline w-full"
+            >
+              Start Free Trial
+            </a>
           </div>
         </div>
 
@@ -1004,14 +1076,21 @@
           <div class="card-body">
             <ul class="text-base" style="list-style: none; padding: 0">
               <li class="mb-sm">✅ <strong>All Starter features</strong></li>
-              <li class="mb-sm">✅ Professional install and config for up to 15 properties</li>
+              <li class="mb-sm">
+                ✅ Professional install and config for up to 15 properties
+              </li>
               <li class="mb-sm">✅ 20 support hours per month included</li>
               <li class="mb-sm">✅ Priority support tickets</li>
               <li class="mb-sm">✅ Custom integration support</li>
             </ul>
           </div>
           <div class="card-footer">
-            <button class="btn btn-primary w-full">Most Popular</button>
+            <a
+              href="mailto:office@gatewaycorporate.org?subject=Request%20Professional%20Plan&body=I'm interested in purchasing HyperLocal for my business at the Professional tier."
+              class="btn btn-primary w-full"
+            >
+              Most Popular
+            </a>
           </div>
         </div>
 
@@ -1023,15 +1102,25 @@
           </div>
           <div class="card-body">
             <ul class="text-base" style="list-style: none; padding: 0">
-              <li class="mb-sm">✅ <strong>All Professional features</strong></li>
-              <li class="mb-sm">✅ Professional install and config for unlimited properties</li>
+              <li class="mb-sm">
+                ✅ <strong>All Professional features</strong>
+              </li>
+              <li class="mb-sm">
+                ✅ Professional install and config for unlimited properties
+              </li>
               <li class="mb-sm">✅ White-label solution</li>
               <li class="mb-sm">✅ 24/7 Enterprise-level support</li>
-              <li class="mb-sm">✅ Enterprise software integrations customized to your organization</li>
+              <li class="mb-sm">
+                ✅ Enterprise software integrations customized to your
+                organization
+              </li>
             </ul>
           </div>
           <div class="card-footer">
-            <button class="btn btn-accent w-full">Contact for Quote</button>
+            <a
+              href="mailto:office@gatewaycorporate.org?subject=Request%20Enterprise%20Plan&body=I represent an enterprise and would like to request a quote for HyperLocal at the Enterprise tier."
+              class="btn btn-accent w-full"
+            >Contact for Quote</a>
           </div>
         </div>
       </div>
@@ -1056,17 +1145,20 @@
           >
             <div class="card-header">
               <div class="icon-circle icon-lg icon-primary">🎯</div>
-              <h3 class="card-title">Start Free Trial</h3>
+              <h3 class="card-title">Request Free Trial</h3>
             </div>
             <div class="card-body">
               <p class="card-text">
-                14 days free. Full access to all features. See instant results
-                with your guests.
+                Request 14 days free with limited access to features. See
+                instant results with your guests.
               </p>
               <div class="card-footer">
-                <button class="btn btn-primary w-full btn-lg">
-                  Start Free Trial
-                </button>
+                <a
+                  href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a free trial of HyperLocal."
+                  class="btn btn-primary w-full btn-lg"
+                >
+                  Request Free Trial
+                </a>
               </div>
             </div>
           </div>
@@ -1077,26 +1169,41 @@
           >
             <div class="card-header">
               <div class="icon-circle icon-lg icon-secondary">📞</div>
-              <h3 class="card-title">Schedule Demo</h3>
+              <h3 class="card-title">Try The Demo</h3>
             </div>
             <div class="card-body">
               <p class="card-text">
-                See HyperLocal in action with a personalized demo for your
-                vacation rental business.
+                See HyperLocal in action with a demo based in and around the
+                Downtown St. Louis area.
               </p>
               <div class="card-footer">
-                <button class="btn btn-accent w-full btn-lg">
-                  Book Demo Call
-                </button>
+                <a
+                  id="demo-btn"
+                  class="btn btn-accent w-full btn-lg"
+                >
+                  Open Demo
+                </a>
               </div>
             </div>
           </div>
         </div>
+        
+        <div id="qr-container" style="display: none; width: 100%; height: 100%; background-color: #000;">
+          <img
+            src="/QR.png"
+            alt="HyperLocal Demo QR Code"
+            id="demo-qr"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px;"
+          />
+          <button id="qr-close-btn" class="btn btn-secondary btn-lg" style="max-width: 300px; position: relative; top: 0; left: 50%; transform: translateX(-50%);">
+            Close QR Code
+          </button>
+        </div>
 
-        <div class="text-center mt-xl">
+        <div class="text-center mt-xl" style="padding: var(--spacing-md)">
           <p class="text-base">
-            Questions? Call us at <strong>(314) 555-HOST</strong> or email
-            <strong>hello@hyperlocal.com</strong>
+            Questions? Call us at <strong>+1 (314) 215-9064</strong> or email
+            <strong>office@gatewaycorporate.org</strong>
           </p>
         </div>
       </div>
@@ -1209,14 +1316,12 @@
         const bookingsPerMonth =
           parseInt(document.getElementById("bookingsPerMonth").value) ||
           0;
-        const messagesPerBooking =
-          parseInt(
-            document.getElementById("messagesPerBooking").value,
-          ) || 0;
-        const minutesPerResponse =
-          parseInt(
-            document.getElementById("minutesPerResponse").value,
-          ) || 0;
+        const messagesPerBooking = parseInt(
+          document.getElementById("messagesPerBooking").value,
+        ) || 0;
+        const minutesPerResponse = parseInt(
+          document.getElementById("minutesPerResponse").value,
+        ) || 0;
 
         const totalMessages = properties * bookingsPerMonth *
           messagesPerBooking;
@@ -1373,53 +1478,35 @@
       // Initialize
       updateTimeSavings();
     </script>
-        <script>
-  const smsLink = "sms:+13149362201?";
-
-  function isMobileDevice() {
-    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-const demoButton = document.getElementById("launchDemoBtn");
-    if (!demoButton) return;
-
-    demoButton.addEventListener("click", (e) => {
-      if (isMobileDevice()) {
-        e.preventDefault();
-        window.location.href = smsLink;
-      } else {
-        alert("Please scan the QR code on mobile to try the demo.");
+    <script>
+      function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod/i.test(
+          navigator.userAgent,
+        );
       }
-    });
-  });
-</script>
-<script>
-  function isMobile() {
-    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  }
-  const tryDemoBtn = document.getElementById('tryDemoBtn');
-  const qrOverlay = document.getElementById('qrOverlay');
-  const closeBtn = document.getElementById('closeBtn');
+      const demoBtn = document.getElementById("demo-btn");
+      const qr = document.getElementById("demo-qr");
+      const qrContainer = document.getElementById("qr-container");
+      const closeBtn = document.getElementById("qr-close-btn");
 
-  tryDemoBtn.addEventListener('click', () => {
-    if (!isMobile()) {
-      qrOverlay.style.display = 'flex';
-      qrOverlay.style.flexDirection = 'column';
-    } else {
-      // On mobile you can do something else or nothing
-      alert('Please scan the QR code from a desktop device.');
-    }
-  });
+      demoBtn.addEventListener("click", () => {
+        if (!isMobile()) {
+          qrContainer.style.display = "flex";
+          qrContainer.style.flexDirection = "column";
+        } else {
+          window.location.href =
+            "sms:+13142159064?body=What can HyperLocal do for me?";
+        }
+      });
 
-  closeBtn.addEventListener('click', () => {
-    qrOverlay.style.display = 'none';
-  });
+      closeBtn.addEventListener("click", () => {
+        qrContainer.style.display = "none";
+      });
 
-  // Optional: close overlay if clicked outside QR container
-  qrOverlay.addEventListener('click', e => {
-    if (e.target === qrOverlay) qrOverlay.style.display = 'none';
-  });
-</script>
+      // Optional: close overlay if clicked outside QR container
+      qrContainer.addEventListener("click", (e) => {
+        if (e.target === qrOverlay) qrOverlay.style.display = "none";
+      });
+    </script>
   </body>
 </html>
