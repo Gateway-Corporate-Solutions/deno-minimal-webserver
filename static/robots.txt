@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /request
+Disallow: /contact
 
 Sitemap: https://gatewaycorporate.org/sitemap.xml
