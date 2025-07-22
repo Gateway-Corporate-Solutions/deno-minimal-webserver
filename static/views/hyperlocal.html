@@ -482,7 +482,31 @@
           font-size: 1.25rem;
         }
       }
+
+      body.noscroll {
+  overflow: hidden;
+}
     </style>
+    <style>
+  /* ...existing styles... */
+  #qr-overlay {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #qr-modal {
+    position: relative;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
   </head>
 
   <body>
@@ -1188,7 +1212,7 @@
           </div>
         </div>
         
-        <div id="qr-container" style="display: none; width: 100%; height: 100%; background-color: #000;">
+        <div id="qr-overlay" style="display: none;">
           <img
             src="/QR.png"
             alt="HyperLocal Demo QR Code"
@@ -1486,13 +1510,14 @@
       }
       const demoBtn = document.getElementById("demo-btn");
       const qr = document.getElementById("demo-qr");
-      const qrContainer = document.getElementById("qr-container");
+      const qrOverlay = document.getElementById("qr-overlay");
       const closeBtn = document.getElementById("qr-close-btn");
 
       demoBtn.addEventListener("click", () => {
         if (!isMobile()) {
-          qrContainer.style.display = "flex";
-          qrContainer.style.flexDirection = "column";
+          qrOverlay.style.display = "flex";
+          qrOverlay.style.flexDirection = "column";
+          document.body.classList.add("noscroll"); // Disable scroll
         } else {
           window.location.href =
             "sms:+13142159064?body=What can HyperLocal do for me?";
@@ -1500,12 +1525,15 @@
       });
 
       closeBtn.addEventListener("click", () => {
-        qrContainer.style.display = "none";
+        qrOverlay.style.display = "none";
+        document.body.classList.remove("noscroll"); // Enable scroll
       });
 
-      // Optional: close overlay if clicked outside QR container
-      qrContainer.addEventListener("click", (e) => {
-        if (e.target === qrOverlay) qrOverlay.style.display = "none";
+      qrOverlay.addEventListener("click", (e) => {
+        if (e.target === qrOverlay) {
+          qrOverlay.style.display = "none";
+          document.body.classList.remove("noscroll"); // Enable scroll
+        }
       });
     </script>
   </body>
