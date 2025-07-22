@@ -556,12 +556,12 @@
 
         <div class="hero-buttons">
           <a
-            href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a free trial of HyperLocal."
+            href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a 14-day free trial of HyperLocal for my business."
             class="btn btn-primary btn-lg"
           >
             Start Free Trial
           </a>
-          <a href="#demo" class="btn btn-accent w-full">Try Demo</a>
+          <a id="demo-btn1" class="btn btn-accent w-full">Try Demo</a>
         </div>
       </div>
     </section>
@@ -1180,7 +1180,7 @@
               </p>
               <div class="card-footer">
                 <a
-                  href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a free trial of HyperLocal."
+                  href="mailto:office@gatewaycorporate.org?subject=Request%20Free%20Trial&body=I would like to request a 14-day free trial of HyperLocal for my business."
                   class="btn btn-primary w-full btn-lg"
                 >
                   Request Free Trial
@@ -1204,7 +1204,7 @@
               </p>
               <div class="card-footer">
                 <a
-                  id="demo-btn"
+                  id="demo-btn2"
                   class="btn btn-accent w-full btn-lg"
                 >
                   Open Demo
@@ -1221,7 +1221,7 @@
             id="demo-qr"
             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px;"
           />
-          <button id="qr-close-btn" class="btn btn-lg" style="max-width: 300px; position: relative; top: 0; left: 50%; transform: translateX(-50%); background-color: #f56565; color: var(--gray-900);">
+          <button id="qr-close-btn" class="btn btn-lg" style="position: absolute; top: 80%; left: 50%; transform: translateX(-50%); background-color: #f56565; color: var(--gray-900);">
             Close QR Code
           </button>
         </div>
@@ -1486,12 +1486,24 @@
           navigator.userAgent,
         );
       }
-      const demoBtn = document.getElementById("demo-btn");
+      const demoBtn1 = document.getElementById("demo-btn1");
+      const demoBtn2 = document.getElementById("demo-btn2");
       const qr = document.getElementById("demo-qr");
       const qrOverlay = document.getElementById("qr-overlay");
       const closeBtn = document.getElementById("qr-close-btn");
 
-      demoBtn.addEventListener("click", () => {
+      demoBtn1.addEventListener("click", () => {
+        if (!isMobile()) {
+          qrOverlay.style.display = "flex";
+          qrOverlay.style.flexDirection = "column";
+          document.body.classList.add("noscroll"); // Disable scroll
+        } else {
+          window.location.href =
+            "sms:+13142159064?body=What can HyperLocal do for me?";
+        }
+      });
+
+      demoBtn2.addEventListener("click", () => {
         if (!isMobile()) {
           qrOverlay.style.display = "flex";
           qrOverlay.style.flexDirection = "column";
